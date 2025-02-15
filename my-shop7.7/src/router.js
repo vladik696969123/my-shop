@@ -23,7 +23,7 @@ const routes = [
 ];
 
 const router = createRouter({
-  history: createWebHistory('/my-shop7.6/'), // Вказуємо базовий шлях для GitHub Pages
+  history: createWebHistory('/my-shop7.7/'), // Вказуємо базовий шлях для GitHub Pages
   routes,
 });
 
