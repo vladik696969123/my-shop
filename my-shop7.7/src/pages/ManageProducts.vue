@@ -1,26 +1,26 @@
 <template>
-    <div>
-      <!-- Компонент форми для додавання товару -->
-      <AddProductForm v-on:add-product="addProductToList" />
-  
-      <!-- Компонент списку товарів -->
-      <ProductList :products="products" />
-    </div>
-  </template>
-  
-  <script>
-  import AddProductForm from '../components/AddProductForm.vue';
-  import ProductList from '../components/ProductList.vue';
-  
-  export default {
-    components: {
-      AddProductForm,
-      ProductList,
-    },
-    data() {
-      return {
-        products: [
-        {
+  <div>
+    <h2>Пошук товарів</h2>
+    <input
+      v-model="searchQuery"
+      placeholder="Введіть назву товару"
+    />
+    <ProductList :products="filteredProducts" />
+  </div>
+</template>
+
+<script>
+import ProductList from '../components/ProductList.vue';
+
+export default {
+  components: {
+    ProductList,
+  },
+  data() {
+return {
+  searchQuery: "", // Що шукає користувач
+products: [
+{
 name: "Смартфон Samsung Galaxy S23",
 price: 35000,
 image: "https://img.freepik.com/free-photo/white-cell-phone-box-background_58702-4721.jpg"
@@ -60,16 +60,18 @@ name: "Фітнес-браслет Xiaomi Mi Band 7",
 price: 1800,
 image: "https://img.freepik.com/free-photo/futuristic-virtual-reality-headset-illuminates-dark-studio-shot-generated-by-ai_188544-13298.jpg"
 }
-        ],
-      };
-    },
-    methods: {
-      addProductToList(newProduct) {
-        this.products.push(newProduct); // Додаємо новий товар у масив
-      },
-    },
-  };
-  </script>
-  
-  
-  
+],
+};
+},
+computed: {
+    filteredProducts: function () {
+        // Фільтруємо список товарів на основі тексту пошуку
+        return this.products.filter(function (product) {
+            return product.name.toLowerCase().includes(this.searchQuery.toLowerCase());
+        }.bind(this));
+    }
+},
+
+};
+</script>
+

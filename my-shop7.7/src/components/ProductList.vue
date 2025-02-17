@@ -15,14 +15,14 @@
 import ProductCard from './ProductCard.vue';
 
 export default {
-  props: {
+components: {
+ProductCard,
+},
+props: {
     products: {
       type: Array,
-      required: true,
+      required: true, // Список товарів передається з батьківського компонента
     },
-  },
-  components: {
-    ProductCard,
   },
 };
 </script>
@@ -36,4 +36,3 @@ export default {
 }
 </style>
 
-  
