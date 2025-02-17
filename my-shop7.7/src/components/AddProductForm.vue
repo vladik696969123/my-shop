@@ -1,5 +1,5 @@
 <template>
-  <div class="admin-panel">
+  <div>
     <h2>Додати новий товар</h2>
     <form v-on:submit.prevent="addProduct">
       <input
@@ -45,16 +45,7 @@ export default {
   },
   methods: {
     addProduct() {
-      if (
-        !this.newProduct.name ||
-        !this.newProduct.price ||
-        !this.newProduct.image
-      ) {
-        alert("Будь ласка, заповніть всі поля!");
-        return;
-      }
-
-      const product = {
+    const product = {
         id: this.nextId++, // Генеруємо унікальний ID
         ...this.newProduct,
       };
