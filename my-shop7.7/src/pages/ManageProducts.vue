@@ -74,4 +74,27 @@ computed: {
 
 };
 </script>
+<!-- Приклад домашнього завдання -->
+<style scoped>
+input {
+  width: 100%; /* Займає всю ширину контейнера */
+  max-width: 600px; /* Обмеження ширини */
+  margin: 0 auto 20px; /* Центрування і відступ знизу */
+  padding: 10px 15px; /* Відступи всередині інпуту */
+  font-size: 16px; /* Розмір тексту */
+  border: 1px solid #ccc; /* Світло-сіра рамка */
+  border-radius: 25px; /* Закруглені кути */
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Легка тінь */
+  transition: all 0.3s ease; /* Анімація змін кольору */
+}
+input:focus {
+  outline: none; /* Забирає стандартну синю рамку браузера */
+  border: 1px solid #007bff; /* Синя рамка */
+  box-shadow: 0 3px 8px rgba(0, 123, 255, 0.4); /* Яскравіша тінь */
+}
+h2 {
+  text-align: center; /* Текст по центру */
+  margin-bottom: 20px; /* Відступ знизу */
+}
+</style>
 
