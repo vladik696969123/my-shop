@@ -1,26 +1,22 @@
 <template>
-  <img alt="Vue logo" src="./assets/logo.png">
-  <HelloWorld msg="Welcome to Your Vue.js App"/>
+  <div id="app">
+    <ProductList
+    name="Українська вишиванка"
+    description="Стильна вишиванка з традиційними орнаментами."
+    price="1500"
+    image="https://content1.rozetka.com.ua/goods/images/big/383454333.jpg"/>
+    <FooterComponent />
+  </div>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
+import ProductList from './components/ProductList.vue';
+import FooterComponent from './components/FooterComponent.vue';
 
-export default {
-  name: 'App',
-  components: {
-    HelloWorld
+export default{
+  components:{
+    ProductList,
+    FooterComponent
   }
-}
+};
 </script>
-
-<style>
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
-}
-</style>
